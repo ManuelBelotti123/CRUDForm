@@ -40,6 +40,41 @@ namespace CRUDForm
             liststampa.Items.Add(Input.Text);
         }
 
+        private void CancElem_Click(object sender, EventArgs e)
+        {
+            int pos = Ricerca(array, Input.Text, dim);
+            if (pos == -1)
+            {
+                liststampa.Items.Clear();
+                liststampa.Items.Add("Elemento non trovato");
+            }
+            else
+            {
+                cancella(array, pos, ref dim);
+                liststampa.Items.Clear();
+            }
+        }
+
+        private void ModificaElem_Click(object sender, EventArgs e)
+        {
+            int pos = Ricerca(array, Input.Text, dim);
+            if (pos == -1)
+            {
+                liststampa.Items.Clear();
+                liststampa.Items.Add("Elemento non trovato");
+            }
+            else
+            {
+                modifica(array, InputMod.Text, pos);
+                liststampa.Items.Clear();
+            }
+        }
+
+        private void StampaArr_Click(object sender, EventArgs e)
+        {
+            stampa(array, dim);
+        }
+
         //funzioni servizio
         public void Aggiunta(string[] array, ref int dim, string elemento)
         {
@@ -51,9 +86,9 @@ namespace CRUDForm
             dim++;
         }
 
-        public int Ricerca(string[] array, string elemricercato, ref int dim)
+        public int Ricerca(string[] array, string elemricercato, int dim)
         {
-            int pos = 0;
+            int pos = -1;
             //trasformo in minuscolo la stringa
             elemricercato = elemricercato.ToLower();
             //ciclo di ricerca
@@ -63,12 +98,31 @@ namespace CRUDForm
                 {
                     pos = i;
                 }
-                else
-                {
-                    return pos = -1;
-                }
             }
             return pos;
+        }
+
+        public void cancella(string[] array, int pos, ref int dim)
+        {
+            for (int i = pos; i < dim; i++)
+            {
+                array[pos] = array[pos + 1];
+            }
+            dim--;
+        }
+
+        public void modifica(string[] array, string elemricercato, int pos)
+        {
+            array[pos] = elemricercato;
+        }
+
+        public void stampa(string[] array, int dim)
+        {
+            liststampa.Items.Clear();
+            for (int i = 0; i < dim; i++)
+            {
+                liststampa.Items.Add(array[i]);
+            }
         }
     }
 }
