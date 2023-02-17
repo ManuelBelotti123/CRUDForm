@@ -89,6 +89,15 @@ namespace CRUDForm
             Sort(array, dim);
         }
 
+        private void ContaElemRipetuti_Click(object sender, EventArgs e)
+        {
+            liststampa.Items.Clear();
+            for (int i = 0; i < dim; i++)
+            {
+                liststampa.Items.Add(array[i] + ": " + ContaElemR(array, i, dim));
+            }
+        }
+
         private void StampaArr_Click(object sender, EventArgs e)
         {
             stampa(array, dim);
@@ -165,6 +174,21 @@ namespace CRUDForm
                     }
                 }
             }
+        }
+
+        public int ContaElemR(string[] array, int pos, int dim)
+        {
+            //dichiarazione del contatore
+            int cont = 0;
+            //ciclo svolto per ogni stringa dell'array
+            for (int i = 0; i < dim; i++)
+            {
+                if (array[pos] == array[i])
+                {
+                    cont++;
+                }
+            }
+            return cont;
         }
     }
 }
