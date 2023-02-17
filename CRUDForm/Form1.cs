@@ -84,6 +84,11 @@ namespace CRUDForm
             InvioMod.Visible = false;
         }
 
+        private void SortFun_Click(object sender, EventArgs e)
+        {
+            Sort(array, dim);
+        }
+
         private void StampaArr_Click(object sender, EventArgs e)
         {
             stampa(array, dim);
@@ -136,6 +141,29 @@ namespace CRUDForm
             for (int i = 0; i < dim; i++)
             {
                 liststampa.Items.Add(array[i]);
+            }
+        }
+
+        public void Sort(string[] array, int dim)
+        {
+            //dichiarazioni
+            int x, y;
+            string sup;
+            //bubblesort
+            for (x = 0; x < dim - 1; x++)
+            {
+                //confronta le coppie 
+                for (y = 0; y < dim - 1 - x; y++)
+                {
+                    //nel caso trovo una coppia da scambiare
+                    if (string.Compare(array[y], array[y + 1]) > 0)
+                    {
+                        sup = array[y];
+                        //avviene lo scambio
+                        array[y] = array[y + 1];
+                        array[y + 1] = sup;
+                    }
+                }
             }
         }
     }
