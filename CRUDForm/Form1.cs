@@ -24,6 +24,10 @@ namespace CRUDForm
             //inizializzazioni e dimensionamenti
             array = new string[100];
             dim = 0;
+            //condizioni di partenza
+            LabelMod.Visible = false;
+            InputMod.Visible = false;
+            InvioMod.Visible = false;
         }
 
         //carica il form
@@ -57,6 +61,13 @@ namespace CRUDForm
 
         private void ModificaElem_Click(object sender, EventArgs e)
         {
+            LabelMod.Visible = true;
+            InputMod.Visible = true;
+            InvioMod.Visible = true;
+        }
+
+        private void InvioMod_Click(object sender, EventArgs e)
+        {
             int pos = Ricerca(array, Input.Text, dim);
             if (pos == -1)
             {
@@ -68,6 +79,9 @@ namespace CRUDForm
                 modifica(array, InputMod.Text, pos);
                 liststampa.Items.Clear();
             }
+            LabelMod.Visible = false;
+            InputMod.Visible = false;
+            InvioMod.Visible = false;
         }
 
         private void StampaArr_Click(object sender, EventArgs e)

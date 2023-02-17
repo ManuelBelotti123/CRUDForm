@@ -36,7 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ModificaElem = new System.Windows.Forms.Button();
             this.InputMod = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LabelMod = new System.Windows.Forms.Label();
+            this.InvioMod = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Input
@@ -113,22 +114,33 @@
             this.InputMod.Size = new System.Drawing.Size(215, 20);
             this.InputMod.TabIndex = 8;
             // 
-            // label2
+            // LabelMod
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Inserire la modifica";
+            this.LabelMod.AutoSize = true;
+            this.LabelMod.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelMod.Location = new System.Drawing.Point(26, 221);
+            this.LabelMod.Name = "LabelMod";
+            this.LabelMod.Size = new System.Drawing.Size(183, 24);
+            this.LabelMod.TabIndex = 9;
+            this.LabelMod.Text = "Inserire la modifica";
+            // 
+            // InvioMod
+            // 
+            this.InvioMod.Location = new System.Drawing.Point(30, 274);
+            this.InvioMod.Name = "InvioMod";
+            this.InvioMod.Size = new System.Drawing.Size(215, 23);
+            this.InvioMod.TabIndex = 10;
+            this.InvioMod.Text = "Invio";
+            this.InvioMod.UseVisualStyleBackColor = true;
+            this.InvioMod.Click += new System.EventHandler(this.InvioMod_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.InvioMod);
+            this.Controls.Add(this.LabelMod);
             this.Controls.Add(this.InputMod);
             this.Controls.Add(this.ModificaElem);
             this.Controls.Add(this.label1);
@@ -154,7 +166,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ModificaElem;
         private System.Windows.Forms.TextBox InputMod;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LabelMod;
+        private System.Windows.Forms.Button InvioMod;
     }
 }
 
