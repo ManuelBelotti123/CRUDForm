@@ -101,10 +101,26 @@ namespace CRUDForm
         private void NomeLunCor_Click(object sender, EventArgs e)
         {
             liststampa.Items.Clear();
-            //elemento più lungo
-            liststampa.Items.Add("L'elemento più lungo è in posizione " + NomLunCor(array, dim, true));
-            //elemento più corto
-            liststampa.Items.Add("L'elemento più corto è in posizione " + NomLunCor(array, dim, false));
+            if (NomLunCor(array, dim, true) == -1)
+            {
+                liststampa.Items.Add("Elemento non trovato");
+            }
+            else
+            {
+                //elemento più lungo
+                liststampa.Items.Add("L'elemento più lungo è in posizione " + NomLunCor(array, dim, true));
+                //elemento più corto
+                liststampa.Items.Add("L'elemento più corto è in posizione " + NomLunCor(array, dim, false));
+            }
+        }
+
+        private void ElimOccorrenze_Click(object sender, EventArgs e)
+        {
+            liststampa.Items.Clear();
+            for (int i = 0; i < dim; i++)
+            {
+                CancOccorrenze(array, i, dim);
+            }
         }
 
         private void StampaArr_Click(object sender, EventArgs e)
@@ -229,6 +245,17 @@ namespace CRUDForm
                 }
             }
             return pos;
+        }
+
+        public void CancOccorrenze(string[] array, int pos, int dim)
+        {
+            for (int i = 0; i < dim; i++)
+            {
+                if (array[pos] == array[i])
+                {
+                    cancella(array, i, ref dim);
+                }
+            }
         }
     }
 }
