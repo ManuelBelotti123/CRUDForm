@@ -98,6 +98,15 @@ namespace CRUDForm
             }
         }
 
+        private void NomeLunCor_Click(object sender, EventArgs e)
+        {
+            liststampa.Items.Clear();
+            //elemento più lungo
+            liststampa.Items.Add("L'elemento più lungo è in posizione " + NomLunCor(array, dim, true));
+            //elemento più corto
+            liststampa.Items.Add("L'elemento più corto è in posizione " + NomLunCor(array, dim, false));
+        }
+
         private void StampaArr_Click(object sender, EventArgs e)
         {
             stampa(array, dim);
@@ -189,6 +198,37 @@ namespace CRUDForm
                 }
             }
             return cont;
+        }
+
+        public int NomLunCor(string[] array, int dim, bool c)
+        {
+            int pos = 0;
+            for (int i = 0; i < dim; i++)
+            {
+                //elemento più lungo
+                if (c)
+                {
+                    for (int j = 0; j < dim; j++)
+                    {
+                        if (array[i].Length < array[j].Length)
+                        {
+                            pos = j;
+                        }
+                    }
+                }
+                //elemento più corto
+                else
+                {
+                    for (int j = 0; j < dim; j++)
+                    {
+                        if (array[i].Length > array[j].Length)
+                        {
+                            pos = j;
+                        }
+                    }
+                }
+            }
+            return pos;
         }
     }
 }

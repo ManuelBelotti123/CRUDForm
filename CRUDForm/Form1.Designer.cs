@@ -40,6 +40,7 @@
             this.InvioMod = new System.Windows.Forms.Button();
             this.SortFun = new System.Windows.Forms.Button();
             this.ContaElemRipetuti = new System.Windows.Forms.Button();
+            this.NomeLunCor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Input
@@ -71,7 +72,7 @@
             // 
             // StampaArr
             // 
-            this.StampaArr.Location = new System.Drawing.Point(30, 236);
+            this.StampaArr.Location = new System.Drawing.Point(30, 265);
             this.StampaArr.Name = "StampaArr";
             this.StampaArr.Size = new System.Drawing.Size(215, 23);
             this.StampaArr.TabIndex = 4;
@@ -111,7 +112,7 @@
             // 
             // InputMod
             // 
-            this.InputMod.Location = new System.Drawing.Point(30, 303);
+            this.InputMod.Location = new System.Drawing.Point(30, 333);
             this.InputMod.Name = "InputMod";
             this.InputMod.Size = new System.Drawing.Size(215, 20);
             this.InputMod.TabIndex = 8;
@@ -120,7 +121,7 @@
             // 
             this.LabelMod.AutoSize = true;
             this.LabelMod.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMod.Location = new System.Drawing.Point(26, 276);
+            this.LabelMod.Location = new System.Drawing.Point(26, 306);
             this.LabelMod.Name = "LabelMod";
             this.LabelMod.Size = new System.Drawing.Size(183, 24);
             this.LabelMod.TabIndex = 9;
@@ -128,7 +129,7 @@
             // 
             // InvioMod
             // 
-            this.InvioMod.Location = new System.Drawing.Point(30, 329);
+            this.InvioMod.Location = new System.Drawing.Point(30, 359);
             this.InvioMod.Name = "InvioMod";
             this.InvioMod.Size = new System.Drawing.Size(215, 23);
             this.InvioMod.TabIndex = 10;
@@ -156,11 +157,22 @@
             this.ContaElemRipetuti.UseVisualStyleBackColor = true;
             this.ContaElemRipetuti.Click += new System.EventHandler(this.ContaElemRipetuti_Click);
             // 
+            // NomeLunCor
+            // 
+            this.NomeLunCor.Location = new System.Drawing.Point(30, 236);
+            this.NomeLunCor.Name = "NomeLunCor";
+            this.NomeLunCor.Size = new System.Drawing.Size(215, 23);
+            this.NomeLunCor.TabIndex = 13;
+            this.NomeLunCor.Text = "Elemento più lungo e più corto";
+            this.NomeLunCor.UseVisualStyleBackColor = true;
+            this.NomeLunCor.Click += new System.EventHandler(this.NomeLunCor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NomeLunCor);
             this.Controls.Add(this.ContaElemRipetuti);
             this.Controls.Add(this.SortFun);
             this.Controls.Add(this.InvioMod);
@@ -194,6 +206,7 @@
         private System.Windows.Forms.Button InvioMod;
         private System.Windows.Forms.Button SortFun;
         private System.Windows.Forms.Button ContaElemRipetuti;
+        private System.Windows.Forms.Button NomeLunCor;
     }
 }
 
